@@ -44,6 +44,16 @@ export class AppEffects {
   );
 
   @Effect()
+  LoadPhotos = this.actions$.pipe(
+    ofType(ApiActions.ApiActionTypes.LoadAttributes),
+    flatMap(action => {
+      return this._apiService
+        .loadPhotos()
+        .map(comments => new ApiActions.PhotosLoadedAction(comments))
+    })
+  );
+
+  @Effect()
   LoadTodos = this.actions$.pipe(
     ofType(ApiActions.ApiActionTypes.LoadAttributes),
     flatMap(action => {
