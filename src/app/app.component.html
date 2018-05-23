@@ -1,1 +1,5 @@
 <a href="javascript:;" (click)="OnClick()">Click Here!</a>
+
+<ul *ngFor="let photo of (photos | async)">
+  <li>{{ photo.title }}</li>
+</ul>

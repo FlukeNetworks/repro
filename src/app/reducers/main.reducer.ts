@@ -45,3 +45,9 @@ export function reducer(state = initialState, {type, payload}): State {
       return state;
   }
 }
+
+export const getPosts = (state: State) => state.posts;
+export const getComments = (state: State) => state.comments;
+export const getAlbums = (state: State) => state.albums;
+export const getPhotos = (state: State) => state.photos;
+export const getTodos = (state: State) => state.todos;
